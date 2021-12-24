@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Comprehensive Analyses of Active Membership Inference Attacks against Federated Learning</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+
+    .header-jumbo {
+        background-image: url("img/background.jpg");
+    }
+
+    .data-section {
+      background-color: #f2f2f2;
+      margin-left: 5%;
+      margin-right: 5%;
+    }
+
+    .data-tab {
+      background-color: #ffffff;
+      padding: 3pt;
+    }
+
+    .tab-title {
+      padding-bottom: 5pt;
+      padding-left: 5px;
+      border-bottom: 1px solid #f1f1f1;
+    }
+
+    .data-fig {
+      max-width: 100%;
+      max-height: 500px;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+        <span class="icon-bar"></span>                      
+      </button>
+      <a class="navbar-brand" href="#">Supplementry Materials</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#RQ1">Performance: RQ1</a></li>
+        <li><a href="#RQ2">Performance: RQ2</a></li>
+        <li><a href="#Optim">Optimization</a></li>
+        <li><a href="#Code">Code Handbook</a></li>
+      </ul>
+      <!-- <ul class="nav navbar-nav navbar-right">
+        <li><a href="https://github.com/MIA-FL/SP22"><span class="glyphicon glyphicon-new-window"></span> Github Repo</a></li>
+      </ul> -->
+    </div>
+  </div>
+</nav>
+
+<div class="jumbotron header-jumbo">
+  <div class="container text-center">
+    <h3>Comprehensive Analyses of Active Membership Inference Attacks against Federated Learning</h3>      
+    <p>Supplementry Materials</p>
+    <a href="https://github.com/MIA-FL/SP22" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-new-window"></span> Github Repo</a>
+  </div>
+</div>
+  
+<div class="container-fluid data-section text-center" id="RQ1">    
+  <h4>RQ1: Performance of MIA-FL</h4>
+  <div class="container text-left data-tab">
+    <h5 class="tab-title">Baseline performance</h5>
+    <div id="Book1_15357" align=center x:publishsource="Excel">
+
+      <table border=1 cellpadding=1 cellspacing=1 width=763 style='border-collapse:
+       collapse;table-layout:fixed;width:571pt'>
+       <col width=87 span=5 style='width:65pt'>
+       <col width=105 style='width:79pt'>
+       <col width=96 style='width:72pt'>
+       <col width=127 style='width:95pt'>
+       <tr height=21 style='height:16.0pt'>
+        <td height=21 width=87 style='height:16.0pt;width:65pt'></td>
+        <td colspan=2 class=xl68 width=174 style='width:130pt'>Global Model
+        Performance</td>
+        <td colspan=4 class=xl68 width=375 style='width:281pt'>Plain Non-targeted
+        MIA-FL Accuracy</td>
+        <td rowspan=2 class=xl69 width=127 style='width:95pt'
+        data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;passive&quot;}">Passive
+        MIA Accuracy</td>
+       </tr>
+       <tr height=21 style='height:16.0pt'>
+        <td height=21 class=xl65 style='height:16.0pt'>
+        <meta charset=utf-8>
+        </td>
+        <td class=xl65>Train Acc</td>
+        <td class=xl65>Test Acc</td>
+        <td class=xl65 data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Black-box&quot;}">Black-box</td>
+        <td class=xl65 data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Grey-box 1&quot;}">Grey-box
+        1</td>
+        <td class=xl65 data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;White-box local&quot;}">White-box
+        local</td>
+        <td class=xl65 data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;white-box agg&quot;}">White-box
+        agg</td>
+       </tr>
+       <tr height=21 style='height:16.0pt'>
+        <td height=21 class=xl65 style='height:16.0pt'
+        data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;CIFAR-10&quot;}">CIFAR-10</td>
+        <td class=xl67 align=right>
+        <div title="Page 8">98.12%</td>
+        <td class=xl67 align=right>84.56%</td>
+        <td class=xl67 align=right data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.6376}"
+        data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">63.76%</td>
+        <td class=xl67 align=right data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.7294}"
+        data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">72.94%</td>
+        <td class=xl67 align=right data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.735351563}"
+        data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">73.54%</td>
+        <td class=xl67 align=right data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.8007}"
+        data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">80.07%</td>
+        <td class=xl67 align=right data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.5898}"
+        data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">58.98%</td>
+       </tr>
+       <tr height=21 style='height:16.0pt'>
+        <td height=21 class=xl65 style='height:16.0pt'
+        data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Location30&quot;}">Location30</td>
+        <td class=xl67 align=right>99.19%</td>
+        <td class=xl67 align=right>64.74%</td>
+        <td class=xl67 align=right data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.7265}"
+        data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">72.65%</td>
+        <td class=xl67 align=right data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.7597}"
+        data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">75.97%</td>
+        <td class=xl67 align=right data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.774414063}"
+        data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">77.44%</td>
+        <td class=xl67 align=right data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.9189}"
+        data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">91.89%</td>
+        <td class=xl67 align=right data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.6406}"
+        data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">64.06%</td>
+       </tr>
+       <tr height=21 style='height:16.0pt'>
+        <td height=21 class=xl65 style='height:16.0pt'
+        data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Purchase100&quot;}">Purchase100</td>
+        <td class=xl67 align=right>99.11%</div>
+        </td>
+        <td class=xl67 align=right>87.17%</td>
+        <td class=xl67 align=right data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.6337}"
+        data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">63.37%</td>
+        <td class=xl67 align=right data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.7627}"
+        data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">76.27%</td>
+        <td class=xl67 align=right data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.764648438}"
+        data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">76.46%</td>
+        <td class=xl67 align=right data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.8681}"
+        data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">86.81%</td>
+        <td class=xl67 align=right data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.5595}"
+        data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">55.95%</td>
+       </tr>
+       <tr height=21 style='height:16.0pt'>
+        <td height=21 class=xl65 style='height:16.0pt'
+        data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Texas100&quot;}">Texas100</td>
+        <td class=xl67 align=right>99.10%</td>
+        <td class=xl67 align=right>57.11%</td>
+        <td class=xl67 align=right data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.916}"
+        data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">91.60%</td>
+        <td class=xl67 align=right data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.9384}"
+        data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">93.84%</td>
+        <td class=xl66 align=right data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.94042969}"
+        data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">94.04%</td>
+        <td class=xl67 align=right data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.984375}"
+        data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">98.44%</td>
+        <td class=xl67 align=right data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.6845}"
+        data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">68.45%</td>
+       </tr>
+       <tr height=21 style='height:16.0pt'>
+        <td height=21 class=xl65 style='height:16.0pt'
+        data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Genome&quot;}">Genome</td>
+        <td class=xl67 align=right>99.21%</td>
+        <td class=xl67 align=right>79.51%</td>
+        <td class=xl67 align=right data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.6679}"
+        data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">66.79%</td>
+        <td class=xl66 align=right data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.74804688}"
+        data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">74.80%</td>
+        <td class=xl66 align=right data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.76855469}"
+        data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">76.86%</td>
+        <td class=xl67 align=right data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.8496}"
+        data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">84.96%</td>
+        <td class=xl67 align=right data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.6093}"
+        data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">60.93%</td>
+       </tr>
+       <![if supportMisalignedColumns]>
+       <tr height=0 style='display:none'>
+        <td width=87 style='width:65pt'></td>
+        <td width=87 style='width:65pt'></td>
+        <td width=87 style='width:65pt'></td>
+        <td width=87 style='width:65pt'></td>
+        <td width=87 style='width:65pt'></td>
+        <td width=105 style='width:79pt'></td>
+        <td width=96 style='width:72pt'></td>
+        <td width=127 style='width:95pt'></td>
+       </tr>
+       <![endif]>
+      </table>
+      
+      </div>
+  </div>
+  <br>
+
+  <div class="container text-left data-tab">
+    <h5 class="tab-title">Attack process</h5>
+    <h5 class="text-center">CIFAR-10</h5>
+    <div class="row">
+      <div class="col-sm-6 text-center">
+        <img class="data-fig" src="img/cifar_blackbox_baseline.png">
+        <h6>Black-box Attack</h6>
+      </div>
+      <div class="col-sm-6 text-center">
+        <img class="data-fig" src="img/cifar_greybox1_baseline.png">
+        <h6>Grey-box 1 Attack</h6>
+      </div>
+    </div>
+    <hr>
+    <h5 class="text-center">Texas100</h5>
+    <div class="row">
+      <div class="col-sm-6 text-center">
+        <img class="data-fig" src="img/texas_blackbox_baseline.png">
+        <h6>Black-box Attack</h6>
+      </div>
+      <div class="col-sm-6 text-center">
+        <img class="data-fig" src="img/texas_greybox1_baseline.png">
+        <h6>Grey-box 1 Attack</h6>
+      </div>
+    </div>
+  </div>
+  <br>
+
+  <div class="container text-left data-tab">
+    <h5 class="tab-title">Start point</h5>
+    <h5 class="text-center">Location30</h5>
+    <div class="row">
+      <div class="col-sm-4 text-center">
+        <img class="data-fig" src="img/location_blackbox.png">
+        <h6>Black-box Attack</h6>
+      </div>
+      <div class="col-sm-4 text-center">
+        <img class="data-fig" src="img/location_greybox.png">
+        <h6>Grey-box 1 Attack</h6>
+      </div>
+      <div class="col-sm-4 text-center">
+        <img class="data-fig" src="img/location_whitebox_global.png">
+        <h6>White-box Agg Attack</h6>
+      </div>
+    </div>
+    <hr>
+    <h5 class="text-center">Genome</h5>
+    <div class="row">
+      <div class="col-sm-4 text-center">
+        <img class="data-fig" src="img/genome_blackbox.png">
+        <h6>Black-box Attack</h6>
+      </div>
+      <div class="col-sm-4 text-center">
+        <img class="data-fig" src="img/genome_greybox.png">
+        <h6>Grey-box 1 Attack</h6>
+      </div>
+      <div class="col-sm-4 text-center">
+        <img class="data-fig" src="img/genome_whitebox_global.png">
+        <h6>White-box Agg Attack</h6>
+      </div>
+    </div>
+  </div>
+  <br>
+
+</div>
+<br>
+
+<div class="container-fluid data-section text-center" id="RQ2">    
+  <h4>RQ2: Performance of MIA-FL against robust aggregation</h4>
+</div>
+<br>
+
+<div class="container-fluid data-section text-center" id="Optim">    
+  <h4>Optimized MIA-FL</h4>
+</div>
+<br>
+
+<div class="container-fluid data-section text-center" id="Code">    
+  <h4>Code Handbook</h4>
+</div>
+<br>
+
+<footer class="container-fluid text-center">
+  <p>Footer Text</p>
+</footer>
+
+</body>
+</html>
