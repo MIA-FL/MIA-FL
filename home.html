@@ -84,7 +84,18 @@
   
 <div class="container-fluid data-section text-center" id="RQ1">    
   <h4>RQ1: Performance of MIA-FL</h4>
-  <div class="container text-left data-tab">
+  <nav class="container">
+    <ul class="center-block" style="list-style: none; display:flex; flex-direction:row; justify-content:space-around;">
+      <li><a href="#base-performance">Baseline performance</a></li>
+      <li><a href="#attack-process">Attack process</a></li>
+      <li><a href="#start-point">Start point</a></li>
+      <li><a href="#dp">Differential privacy</a></li>
+      <li><a href="#attack-rounds">Attack rounds</a></li>
+      <li><a href="#targeted-attack">Targeted attack</a></li>
+    </ul>
+  </nav>
+  <div class="container text-left data-tab" id='base-performance'>
+
     <h5 class="tab-title">Baseline performance</h5>
     <div id="Book1_15357" align=center x:publishsource="Excel">
 
@@ -218,7 +229,7 @@
   </div>
   <br>
 
-  <div class="container text-left data-tab">
+  <div class="container text-left data-tab" id='attack-process'>
     <h5 class="tab-title">Attack process</h5>
     <h5 class="text-center">CIFAR-10</h5>
     <div class="row">
@@ -246,7 +257,7 @@
   </div>
   <br>
 
-  <div class="container text-left data-tab">
+  <div class="container text-left data-tab" id='start-point'>
     <h5 class="tab-title">Start point</h5>
     <h5 class="text-center">Location30</h5>
     <div class="row">
@@ -282,26 +293,738 @@
   </div>
   <br>
 
+  <div class="container text-left data-tab" id='dp'>
+    <h5 class="tab-title">Performance of Grey-box I MIA-FL against differentially private FL</h5>
+    <div id="tables_29200" align=center x:publishsource="Excel">
+      <table border=1 cellpadding=1 cellspacing=1 width=800 style='border-collapse:
+      collapse;table-layout:fixed;width:413pt'>
+      <col width=87 style='width:65pt'>
+      <col width=117 style='width:88pt'>
+      <col width=87 span=4 style='width:65pt'>
+      <tr height=21 style='height:16.0pt'>
+        <td rowspan=2 height=42 class=xl66 width=87 style='height:32.0pt;width:65pt'></td>
+        <td rowspan=2 class=xl66 width=117 style='width:88pt'
+        data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;(epsilon,delta)-DP&quot;}">
+        <div style='max-height:40px'>(epsilon,delta)-DP</div>
+        </td>
+        <td class=xl63 colspan=2 width=174 style='width:130pt'
+        data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Global model performance&quot;}">Global
+        model performance</td>
+        <td colspan=2 class=xl66 width=174 style='width:130pt'
+        data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot; MIA-FL  Accuracy&quot;}">MIA-FL
+        Accuracy</td>
+      </tr>
+      <tr height=21 style='height:16.0pt'>
+        <td height=21 class=xl63 style='height:16.0pt'
+        data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Train Acc&quot;}">Train
+        Acc</td>
+        <td class=xl63 data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Test Acc&quot;}">Test
+        Acc</td>
+        <td class=xl63 data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Grey-box 1&quot;}">Grey-box
+        1</td>
+        <td class=xl63 data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;White-box local&quot;}">White-box
+        local<span style='display:none'>al</span></td>
+      </tr>
+      <tr height=21 style='height:16.0pt'>
+        <td height=21 class=xl63 style='height:16.0pt'
+        data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;CIFAR-10&quot;}">CIFAR-10</td>
+        <td class=xl63 data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;(1.005, 10^-5)&quot;}">(1.005,
+        10^-5)</td>
+        <td class=xl64 align=right data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.908353365384615}"
+        data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">90.84%</td>
+        <td class=xl64 align=right data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.672425881410256}"
+        data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">67.24%</td>
+        <td class=xl64 align=right data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.728515625}"
+        data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">72.85%</td>
+        <td class=xl63></td>
+      </tr>
+      <tr height=21 style='height:16.0pt'>
+        <td height=21 class=xl63 style='height:16.0pt'
+        data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Location30&quot;}">Location30</td>
+        <td class=xl63 data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;(1.025, 10^-5)&quot;}">(1.025,
+        10^-5)</td>
+        <td class=xl64 align=right data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.991}"
+        data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">99.10%</td>
+        <td class=xl64 align=right data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.546875}"
+        data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">54.69%</td>
+        <td class=xl64 align=right data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.765625}"
+        data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">76.56%</td>
+        <td class=xl63></td>
+      </tr>
+      <tr height=21 style='height:16.0pt'>
+        <td height=21 class=xl63 style='height:16.0pt'
+        data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Purchase100&quot;}">Purchase100</td>
+        <td class=xl63 data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;(1.017, 10^-5)&quot;}">(1.017,
+        10^-5)</td>
+        <td class=xl64 align=right data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.966162743506494}"
+        data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">96.62%</td>
+        <td class=xl64 align=right data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.822138798701299}"
+        data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">82.21%</td>
+        <td class=xl64 align=right data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.7666015625}"
+        data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">76.66%</td>
+        <td class=xl63></td>
+      </tr>
+      <tr height=21 style='height:16.0pt'>
+        <td height=21 class=xl63 style='height:16.0pt'
+        data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Texas100&quot;}">Texas100</td>
+        <td class=xl63 data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;(1.084, 10^-5)&quot;}">(1.084,
+        10^-5)</td>
+        <td class=xl64 align=right data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.989434523809524}"
+        data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">98.94%</td>
+        <td class=xl64 align=right data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.497916666666667}"
+        data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">49.79%</td>
+        <td class=xl64 align=right data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.9384765625}"
+        data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">93.85%</td>
+        <td class=xl63></td>
+      </tr>
+      <tr height=21 style='height:16.0pt'>
+        <td height=21 class=xl63 style='height:16.0pt'
+        data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Genome&quot;}">Genome</td>
+        <td class=xl63 data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;(1.001, 10^-5)&quot;}">(1.001,
+        10^-5)</td>
+        <td class=xl64 align=right data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.9921875}"
+        data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">99.22%</td>
+        <td class=xl64 align=right data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.625}"
+        data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">62.50%</td>
+        <td class=xl64 align=right data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.748046875}"
+        data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">74.80%</td>
+        <td class=xl63></td>
+      </tr>
+      <![if supportMisalignedColumns]>
+      <tr height=0 style='display:none'>
+        <td width=87 style='width:65pt'></td>
+        <td width=117 style='width:88pt'></td>
+        <td width=87 style='width:65pt'></td>
+        <td width=87 style='width:65pt'></td>
+        <td width=87 style='width:65pt'></td>
+        <td width=87 style='width:65pt'></td>
+      </tr>
+      <![endif]>
+      </table>
+    </div>
+  </div>
+  <br>
+
+  <div class="container text-left data-tab" id="attack-rounds">
+    <h5 class="tab-title">Attack rounds</h5>
+
+    <h5 class="text-center">Location30</h5>
+    <div class="row">
+      <div class="col-sm-4 text-center">
+        <img class="data-fig" src="img/location-blackbox-rounds.png">
+        <h6>Black-box Attack</h6>
+      </div>
+      <div class="col-sm-4 text-center">
+        <img class="data-fig" src="img/location-greybox-rounds.png">
+        <h6>Grey-box 1 Attack</h6>
+      </div>
+      <div class="col-sm-4 text-center">
+        <img class="data-fig" src="img/location-whitebox_global-rounds.png">
+        <h6>White-box Agg Attack</h6>
+      </div>
+    </div>
+    <hr>
+
+  </div>
+  <br>
+
+  <div class="container text-left data-tab" id='targeted-attack'>
+    <h5 class="tab-title">Targeted MIA-FL attack accuracy</h5>
+    <div class="container">
+      <div class="container text-center">
+        <table dir="ltr" border="1" cellspacing="0" cellpadding="0"><colgroup><col width="100" /><col width="152" /><col width="100" /><col width="100" /><col width="100" /><col width="100" /><col width="100" /></colgroup>
+          <tbody>
+          <tr>
+          <td colspan="1" rowspan="2">
+          </td>
+          <td colspan="3" rowspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;IID&quot;}">IID</td>
+          <td colspan="3" rowspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Non-IID&quot;}">Non-IID</td>
+          </tr>
+          <tr>
+          <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Attack acc on Mem&quot;}">Attack acc on Mem</td>
+          <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Targeted acc on T_mem&quot;}">Targeted acc on T_mem</td>
+          <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Targeted acc on P_mem&quot;}">Targeted acc on P_mem</td>
+          <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Attack acc on Mem&quot;}">Attack acc on Mem</td>
+          <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Targeted acc on T_mem&quot;}">Targeted acc on T_mem</td>
+          <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Targeted acc on P_mem&quot;}">
+          <div>
+          <div>Targeted acc on P_mem</div>
+          </div>
+          </td>
+          </tr>
+          <tr>
+          <td colspan="7" rowspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Grey-box II&quot;}">Grey-box II</td>
+          </tr>
+          <tr>
+          <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Location30&quot;}">Location30</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.5208}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">52.08%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.4415}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">44.15%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.22993320000000003}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}" data-sheets-formula="=R[0]C[-2]*R[0]C[-1]">22.99%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.5475}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">54.75%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.8867}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">88.67%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.48546825}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}" data-sheets-formula="=R[0]C[-2]*R[0]C[-1]">48.55%</td>
+          </tr>
+          <tr>
+          <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Purchase100&quot;}">Purchase100</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.5111}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">51.11%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.309}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">30.90%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.15792989999999998}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}" data-sheets-formula="=R[0]C[-2]*R[0]C[-1]">15.79%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.5106}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">51.06%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:1}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0%&quot;,&quot;3&quot;:1}">100%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.5106}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}" data-sheets-formula="=R[0]C[-2]*R[0]C[-1]">51.06%</td>
+          </tr>
+          <tr>
+          <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;CIFAR-10&quot;}">CIFAR-10</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.5679}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">56.79%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.2733}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">27.33%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.15520706999999997}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}" data-sheets-formula="=R[0]C[-2]*R[0]C[-1]">15.52%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.5244}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">52.44%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:1}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0%&quot;,&quot;3&quot;:1}">100%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.5244}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}" data-sheets-formula="=R[0]C[-2]*R[0]C[-1]">52.44%</td>
+          </tr>
+          <tr>
+          <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;TEXAS100&quot;}">TEXAS100</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.5667}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">56.67%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.64313725490196}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">64.31%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.36446588235294075}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}" data-sheets-formula="=R[0]C[-2]*R[0]C[-1]">36.45%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.5475}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">54.75%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.911764705882352}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">91.18%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.49919117647058775}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}" data-sheets-formula="=R[0]C[-2]*R[0]C[-1]">49.92%</td>
+          </tr>
+          <tr>
+          <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;GENOME&quot;}">GENOME</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.5307}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">53.07%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.260330578512396}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">26.03%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.13815743801652855}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}" data-sheets-formula="=R[0]C[-2]*R[0]C[-1]">13.82%</td>
+          </tr>
+          <tr>
+          <td colspan="7" rowspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;White-box Local&quot;}">White-box Local</td>
+          </tr>
+          <tr>
+          <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Location30&quot;}">Location30</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.8557}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">85.57%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.44}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">44.00%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.376508}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}" data-sheets-formula="=R[0]C[-2]*R[0]C[-1]">37.65%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.5966}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">59.66%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:1}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">100.00%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.5966}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}" data-sheets-formula="=R[0]C[-2]*R[0]C[-1]">59.66%</td>
+          </tr>
+          <tr>
+          <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Purchase100&quot;}">Purchase100</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.7581}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">75.81%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.3303}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">33.03%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.25040043}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}" data-sheets-formula="=R[0]C[-2]*R[0]C[-1]">25.04%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.5}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">50.00%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:1}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">100.00%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.5}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}" data-sheets-formula="=R[0]C[-2]*R[0]C[-1]">50.00%</td>
+          </tr>
+          <tr>
+          <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;CIFAR-10&quot;}">CIFAR-10</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.7625}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">76.25%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.4501}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">45.01%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.34320124999999996}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}" data-sheets-formula="=R[0]C[-2]*R[0]C[-1]">34.32%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.5}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">50.00%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:1}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">100.00%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.5}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}" data-sheets-formula="=R[0]C[-2]*R[0]C[-1]">50.00%</td>
+          </tr>
+          <tr>
+          <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;TEXAS100&quot;}">TEXAS100</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.7522}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">75.22%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.710900473933649}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">71.09%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.5347393364928907}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}" data-sheets-formula="=R[0]C[-2]*R[0]C[-1]">53.47%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.8}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">80.00%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.98076923076923}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">98.08%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.784615384615384}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}" data-sheets-formula="=R[0]C[-2]*R[0]C[-1]">78.46%</td>
+          </tr>
+          <tr>
+          <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;GENOME&quot;}">GENOME</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.6416}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">64.16%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.415584415584415}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">41.56%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.2666389610389606}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}" data-sheets-formula="=R[0]C[-2]*R[0]C[-1]">26.66%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.4}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">40.00%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.9}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">90.00%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.36000000000000004}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}" data-sheets-formula="=R[0]C[-2]*R[0]C[-1]">36.00%</td>
+          </tr>
+          <tr>
+          <td colspan="7" rowspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;White-box Global&quot;}">White-box Global</td>
+          </tr>
+          <tr>
+          <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Location30&quot;}">Location30</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.9307}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">93.07%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.8685}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">86.85%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.80831295}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}" data-sheets-formula="=R[0]C[-2]*R[0]C[-1]">80.83%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.7586}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">75.86%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:1}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">100.00%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.7586}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}" data-sheets-formula="=R[0]C[-2]*R[0]C[-1]">75.86%</td>
+          </tr>
+          <tr>
+          <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Purchase100&quot;}">Purchase100</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.6985}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">69.85%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.5996}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">59.96%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.41882060000000004}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}" data-sheets-formula="=R[0]C[-2]*R[0]C[-1]">41.88%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.592}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">59.20%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:1}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">100.00%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.592}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}" data-sheets-formula="=R[0]C[-2]*R[0]C[-1]">59.20%</td>
+          </tr>
+          <tr>
+          <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;CIFAR-10&quot;}">CIFAR-10</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.7127}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">71.27%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.7035}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">70.35%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.50138445}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}" data-sheets-formula="=R[0]C[-2]*R[0]C[-1]">50.14%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.4935}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">49.35%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:1}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">100.00%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.4935}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}" data-sheets-formula="=R[0]C[-2]*R[0]C[-1]">49.35%</td>
+          </tr>
+          <tr>
+          <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;TEXAS100&quot;}">TEXAS100</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.974}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">97.40%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.893442622950819}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">89.34%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.8702131147540977}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}" data-sheets-formula="=R[0]C[-2]*R[0]C[-1]">87.02%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.9845}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">98.45%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.984251968503937}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">98.43%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.968996062992126}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}" data-sheets-formula="=R[0]C[-2]*R[0]C[-1]">96.90%</td>
+          </tr>
+          <tr>
+          <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;GENOME&quot;}">GENOME</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.8168}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">81.68%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.844393592677345}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">84.44%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.6897006864988554}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}" data-sheets-formula="=R[0]C[-2]*R[0]C[-1]">68.97%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.7}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">70.00%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:1}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">100.00%</td>
+          <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.7}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}" data-sheets-formula="=R[0]C[-2]*R[0]C[-1]">70.00%</td>
+          </tr>
+          </tbody>
+          </table>
+      </div>
+      <div>
+        <ul>
+          <li>Pred_Mem = Number of samples that predicted as member by the adversary</li>
+          <li>True_Mem = Number of true member samples among Pred_Mem</li>
+          <li>True_Target = Number of samples that are assigned with their correct owners by the adversary among True_Mem</li>
+          <li>Attack acc on Mem = True_Mem /Pred_Mem</li>
+          <li>Targeted acc on T_mem = True_Target /True_Mem</li>
+          <li>Targeted acc on P_mem = True_Target /Pred_Mem</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <br>
+
 </div>
 <br>
 
 <div class="container-fluid data-section text-center" id="RQ2">    
   <h4>RQ2: Performance of MIA-FL against robust aggregation</h4>
+  <div class="container text-left data-tab">
+    <h5 class="tab-title">Performance of MIA-FL against robust aggregation mechanisms</h5>
+
+    <div class="container">
+      <table dir="ltr" border="1" cellspacing="0" cellpadding="0"><colgroup><col width="100" /><col width="152" /><col width="100" /><col width="100" /><col width="100" /><col width="100" /><col width="100" /><col width="100" /><col width="100" /><col width="100" /><col width="100" /></colgroup>
+        <tbody>
+        <tr>
+        <td colspan="1" rowspan="3">
+        </td>
+        <td colspan="2" rowspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Black-box&quot;}">Black-box</td>
+        <td colspan="2" rowspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Grey-box 1&quot;}">Grey-box 1</td>
+        <td colspan="2" rowspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;White-box Local&quot;}">White-box Local</td>
+        <td colspan="1" rowspan="4" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Average mitigation&quot;}">
+        <div>Average mitigation</div>
+        </td>
+        <td colspan="2" rowspan="2" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Model Test Accuracy&quot;}">
+        <div>Model Test Accuracy</div>
+        </td>
+        <td colspan="1" rowspan="4" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Average model test accuracy reduction&quot;}">
+        <div>Average model test accuracy reduction</div>
+        </td>
+        </tr>
+        <tr>
+        <td colspan="2" rowspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Attack Accuracy&quot;}">Attack Accuracy</td>
+        <td colspan="2" rowspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Attack Accuracy&quot;}">Attack Accuracy</td>
+        <td colspan="2" rowspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Attack Accuracy&quot;}">Attack Accuracy</td>
+        </tr>
+        <tr>
+        <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;CIFAR-10&quot;}">CIFAR-10</td>
+        <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Location30&quot;}">Location30</td>
+        <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;CIFAR-10&quot;}">CIFAR-10</td>
+        <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Location30&quot;}">Location30</td>
+        <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;CIFAR-10&quot;}">CIFAR-10</td>
+        <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Location30&quot;}">Location30</td>
+        <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;CIFAR-10&quot;}">CIFAR-10</td>
+        <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Location30&quot;}">Location30</td>
+        </tr>
+        <tr>
+        <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Baseline&quot;}">Baseline</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.6376}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">63.76%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.7265}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">72.65%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.7294}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">72.94%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.7597}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">75.97%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.735351563}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">73.54%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.774414063}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">77.44%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.8456}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">84.56%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.6474}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">64.74%</td>
+        </tr>
+        <tr>
+        <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Krum&quot;}">Krum</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.5771}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">57.71%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.5605}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">56.05%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.5928}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">59.28%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.5664}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">56.64%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.5703}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">57.03%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.5625}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">56.25%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:-0.1555609376666667}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">-15.56%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.7185}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">71.85%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.5459}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">54.59%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:-0.11429999999999996}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">-11.43%</td>
+        </tr>
+        <tr>
+        <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Multi-krum&quot;}">Multi-krum</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.6162}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">61.62%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.5771}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">57.71%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.5986}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">59.86%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.627}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">62.70%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.583}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">58.30%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.585}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">58.50%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:-0.12934427100000004}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">-12.93%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.7824}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">78.24%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.5838}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">58.38%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:-0.06340000000000001}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">-6.34%</td>
+        </tr>
+        <tr>
+        <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Trimmed-mean&quot;}">Trimmed-mean</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.6387}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">63.87%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.6943}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">69.43%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.7432}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">74.32%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.7598}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">75.98%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.7168}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">71.68%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.7461}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">74.61%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:-0.010677604333333349}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">-1.07%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.8357}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">83.57%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.3601}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">36.01%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:-0.1486}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">-14.86%</td>
+        </tr>
+        <tr>
+        <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Median&quot;}">Median</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.6543}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">65.43%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.6973}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">69.73%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.7178}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">71.78%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.7363}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">73.63%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.7236}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">72.36%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.7334}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">73.34%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:-0.016710937666666686}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">-1.67%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.7731}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">77.31%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.5594}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">55.94%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:-0.08024999999999999}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">-8.03%</td>
+        </tr>
+        <tr>
+        <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Fang defenses&quot;}">Fang defenses</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.6113}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">61.13%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.7158}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">71.58%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.6182}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">61.82%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.6572}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">65.72%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.6123}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">61.23%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.6641}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">66.41%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:-0.08067760433333337}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">-8.07%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.8244}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">82.44%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.6148}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">61.48%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:-0.02689999999999998}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">-2.69%</td>
+        </tr>
+        </tbody>
+        </table>
+    </div>
+
+  </div>
+  <br>
+  
 </div>
 <br>
 
 <div class="container-fluid data-section text-center" id="Optim">    
   <h4>Optimized MIA-FL</h4>
+  <div class="data-tab container text-left">
+    <h5 class="tab-title">Table 1: CIFAR-10 and Location30</h5>
+    <table dir="ltr" border="1" cellspacing="0" cellpadding="0"><colgroup><col width="100" /><col width="120" /><col width="184" /><col width="118" /><col width="146" /><col width="109" /><col width="222" /><col width="136" /></colgroup>
+      <tbody>
+      <tr>
+      <td colspan="2" rowspan="2">
+      </td>
+      <td colspan="2" rowspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Black-box&quot;}">Black-box</td>
+      <td colspan="2" rowspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Grey-box 1&quot;}">Grey-box 1</td>
+      <td colspan="2" rowspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;White-box Local&quot;}">White-box Local</td>
+      </tr>
+      <tr>
+      <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;CIFAR-10&quot;}">CIFAR-10</td>
+      <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Location30&quot;}">Location30</td>
+      <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;CIFAR-10&quot;}">CIFAR-10</td>
+      <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Location30&quot;}">Location30</td>
+      <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;CIFAR-10&quot;}">CIFAR-10</td>
+      <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Location30&quot;}">Location30</td>
+      </tr>
+      <tr>
+      <td colspan="2" rowspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Baseline&quot;}">Non-AGR Baseline</td>
+      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.6376}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">63.76%</td>
+      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.7265}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">72.65%</td>
+      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.7294}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">72.94%</td>
+      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.7597}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">75.97%</td>
+      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.735351563}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">73.54%</td>
+      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.774414063}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">77.44%</td>
+      </tr>
+      <tr>
+      <td colspan="1" rowspan="2" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Multi-krum&quot;}">
+      <div>Multi-krum</div>
+      </td>
+      <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Baseline vs Agr&quot;}">Baseline</td>
+      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.6162}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">61.62%</td>
+      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.5771}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">57.71%</td>
+      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.5986}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">59.86%</td>
+      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.627}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">62.70%</td>
+      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.583}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">58.30%</td>
+      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.585}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">58.50%</td>
+      </tr>
+      <tr>
+      <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Optimized \\attack vs Agr&quot;}">Optimized attack</td>
+      <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;--&quot;}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">--</td>
+      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.6953125}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">69.53%</td>
+      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.677685}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">67.77%</td>
+      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.7421875}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">74.22%</td>
+      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.73046875}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">73.05%</td>
+      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.767578125}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">76.76%</td>
+      </tr>
+      <tr>
+      <td colspan="1" rowspan="2" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Fang defenses&quot;}">
+      <div>Fang defenses</div>
+      </td>
+      <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Baseline vs Agr&quot;}">Baseline</td>
+      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.6113}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">61.13%</td>
+      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.7158}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">71.58%</td>
+      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.6182}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">61.82%</td>
+      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.6572}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">65.72%</td>
+      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.6123}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">61.23%</td>
+      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.6641}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">66.41%</td>
+      </tr>
+      <tr>
+      <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Optimized \\attack vs Agr&quot;}">Optimized attack</td>
+      <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;--&quot;}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">--</td>
+      <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;--&quot;}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">--</td>
+      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.713846565089548}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">71.38%</td>
+      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.74207510104971}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">74.21%</td>
+      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.723480415}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">72.35%</td>
+      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.759765625}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">75.98%</td>
+      </tr>
+      </tbody>
+      </table>
+  </div>
+  <div class="data-tab container text-left">
+    <h5 class="tab-title">Table 2: Texas100, Genome, and Purchase100</h5>
+    <table dir="ltr" border="1" cellspacing="0" cellpadding="0"><colgroup><col width="100" /><col width="152" /><col width="100" /><col width="100" /><col width="100" /><col width="100" /><col width="100" /><col width="100" /><col width="100" /><col width="100" /><col width="100" /></colgroup>
+      <tbody>
+      <tr>
+      <td colspan="2" rowspan="2">
+      </td>
+      <td colspan="3" rowspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Black-box&quot;}">Black-box</td>
+      <td colspan="3" rowspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Grey-box 1&quot;}">Grey-box 1</td>
+      <td colspan="3" rowspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;White-box Local&quot;}">White-box Local</td>
+      </tr>
+      <tr>
+      <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;TEXAS100&quot;}">TEXAS100</td>
+      <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;PURCHASE100&quot;}">PURCHASE100</td>
+      <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;GENOME&quot;}">GENOME</td>
+      <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;TEXAS100&quot;}">TEXAS100</td>
+      <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;PURCHASE100&quot;}">PURCHASE100</td>
+      <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;GENOME&quot;}">GENOME</td>
+      <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;TEXAS100&quot;}">TEXAS100</td>
+      <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;PURCHASE100&quot;}">PURCHASE100</td>
+      <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;GENOME&quot;}">GENOME</td>
+      </tr>
+      <tr>
+      <td colspan="2" rowspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Baseline&quot;}">Non-AGR Baseline</td>
+      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.9765625}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">97.66%</td>
+      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.63378906}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">63.38%</td>
+      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.701171875}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">70.12%</td>
+      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.975585938}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">97.56%</td>
+      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.848632813}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">84.86%</td>
+      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.866210938}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">86.62%</td>
+      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.98046875}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">98.05%</td>
+      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.8291015625}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">82.91%</td>
+      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.833984375}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">83.40%</td>
+      </tr>
+      <tr>
+      <td colspan="1" rowspan="2" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Multi-krum&quot;}">
+      <div>Multi-krum</div>
+      </td>
+      <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Baseline vs Agr&quot;}">Baseline</td>
+      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.771484375}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">77.15%</td>
+      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.578125}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">57.81%</td>
+      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.55078125}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">55.08%</td>
+      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.7841796875}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">78.42%</td>
+      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.7880859375}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">78.81%</td>
+      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.5615234375}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">56.15%</td>
+      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.7822265625}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">78.22%</td>
+      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.7529296875}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">75.29%</td>
+      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.5693359375}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">56.93%</td>
+      </tr>
+      <tr>
+      <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Optimized \\attack vs Agr&quot;}">Optimized attack</td>
+      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.806640625}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">80.66%</td>
+      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.648}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">64.80%</td>
+      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.5625}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">56.25%</td>
+      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.794921875}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">79.49%</td>
+      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.7880859375}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">78.81%</td>
+      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.58}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">58.00%</td>
+      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.916015625}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">91.60%</td>
+      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.806640625}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">80.66%</td>
+      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.53125}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">53.13%</td>
+      </tr>
+      <tr>
+      <td colspan="1" rowspan="2" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Fang defenses&quot;}">
+      <div>Fang defenses</div>
+      </td>
+      <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Baseline vs Agr&quot;}">Baseline</td>
+      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.8447265625}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">84.47%</td>
+      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.5810546875}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">58.11%</td>
+      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.603515625}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">60.35%</td>
+      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.6767578125}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">67.68%</td>
+      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.5634765625}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">56.35%</td>
+      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.5546875}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">55.47%</td>
+      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.8056640625}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">80.57%</td>
+      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.5703125}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">57.03%</td>
+      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.6162109375}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">61.62%</td>
+      </tr>
+      <tr>
+      <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Optimized \\attack vs Agr&quot;}">Optimized attack</td>
+      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.968}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">96.80%</td>
+      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.590818363273453}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">59.08%</td>
+      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.74}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">74.00%</td>
+      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.83}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">83.00%</td>
+      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.6212624585}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">62.13%</td>
+      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.606666666666666}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">60.67%</td>
+      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.878}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">87.80%</td>
+      </tr>
+      </tbody>
+      </table>
+  </div>
+  <br>
 </div>
 <br>
 
 <div class="container-fluid data-section text-center" id="Code">    
   <h4>Code Handbook</h4>
+  <div class="data-tab container text-left">
+    <h5 class="tab-title">File structures</h5>
+    <div class="container">
+      <p>Backbone files</p>
+      <p>These files provides the core functionality in the experiment setting</p>
+      <ol>
+      <li>aggregator.py <span class="text-muted"> - The aggregator collects and calculate the gradients from participants</span></li>
+      <li>constants.py <span class="text-muted"> - All hyper-parameters</span></li>
+      <li>data_reader.py <span class="text-muted"> - The module loading data from data set files and distribute them to participants</span></li>
+      <li>models.py <span class="text-muted"> - The participants, global model, and local attackers</span></li>
+      <li>organizer.py <span class="text-muted"> - The module setting up different experiments</span></li>
+      </ol>
+    </div>
+    <hr>
+    <div class="container">
+      <p>Experiment runnable</p>
+      <p>These files are the runnable experiment files calling above backbone files</p>
+      <ol>
+        <li>blackbox_agr_op.py</li>
+        <li>blackbox_agr_optimized.py</li>
+        <li>blackbox_baseline.py</li>
+        <li>blackbox_optimized.py</li>
+        <li>blackbox_starting_baseline.py</li>
+        <li>grey1_baseline_texas_trmean.py</li>
+        <li>greybox_I_baseline_misleading.py</li>
+        <li>greybox_I_baseline.py</li>
+        <li>greybox_II_baseline.py</li>
+        <li>greybox1_starting_baseline.py</li>
+        <li>optimized_greybox1.py</li>
+        <li>whitebox_global_non_target_starting_baseline.py</li>
+        <li>whitebox_global_non_targeted_baseline.py</li>
+        <li>whitebox_global_target_starting_baseline.py</li>
+        <li>whitebox_global_targeted_round_robbin_shadow_ver.py</li>
+        <li>whitebox_global_targeted_round_robbin_starting_point_baseline.py</li>
+        <li>whitebox_global_targeted_round_robbin.py</li>
+        <li>whitebox_local_baseline.py</li>
+        <li>whitebox_local_optimized.py</li>
+        <li>whitebox_local_targeted_baseline.py</li>
+      </ol>
+    </div>
+    <hr>
+    <div class="container">
+      <p>Readme</p>
+      <p>
+        The dataset_purchase.tgz need to be extracted as 'dataset_purchase' before running
+      </p>
+    </div>
+  </div>
+  <br>
+
+  <div class="data-tab container text-left">
+    <h5 class="tab-title">Constant List</h5>
+    <div class="container">
+      <p>
+        Key constants
+      </p>
+      <ol>
+        <li>
+          DEFAULT_SET
+          <ul>
+            <li>The chosen dataset to run experiments</li>
+            <li>
+              Available values
+              <ol>
+                <li>PURCHASE100</li>
+                <li>CIFAR_10</li>
+                <li>LOCATION30</li>
+                <li>TEXAS100</li>
+                <li>GNOME</li>
+              </ol>
+            </li>
+          </ul>
+        </li>
+        <li>
+          DEFAULT_AGR
+          <ul>
+            <li>The chosen robust aggregation mechanisms to defend malicious updates</li>
+            <li>
+              Available values
+              <ol>
+                <li>TRMEAN = "Trimmed Mean"</li>
+                <li>KRUM = "Krum"</li>
+                <li>MULTI_KRUM = "Multi-Krum"</li>
+                <li>MEDIAN = "Median"</li>
+                <li>FANG = "Fang"</li>
+                <li>None (Please use the python reserved None value)</li>
+              </ol>
+            </li>
+          </ul>
+        </li>
+        <li>
+          NUMBER_OF_PARTICIPANTS: The number of participants involved in federated learning process
+        </li>
+        <li>
+          NUMBER_OF_ADVERSARY: The number of adversary involved in attack experiments, the adversary is in a DISJOINT set with participants
+        </li>
+        <li>
+          MAX_EPOCH: The overall rounds of federated training for the current experiment
+        </li>
+        <li>
+          TRAIN_EPOCH: The overall rounds of deferated training without malicious updates. In other words, the number of training rounds that the adversary waits the model to converge
+        </li>
+        <li>
+          EXPERIMENTAL_DATA_DIRECTORY: The directory to store experiment data, it must be a existing directory
+        </li>
+        <li>
+          GLOBAL_SEED: The random seed used
+        </li>
+      </ol>
+    </div>
+  </div>
+  <br>
 </div>
 <br>
 
 <footer class="container-fluid text-center">
-  <p>Footer Text</p>
+  <p>Comprehensive Analyses of Active Membership Inference Attacks against Federated Learning</p>
 </footer>
 
 </body>
