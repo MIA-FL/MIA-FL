@@ -49,23 +49,21 @@
 </head>
 <body>
 
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-        <span class="icon-bar"></span> 
-        <span class="icon-bar"></span>                      
+        <span class="icon-bar"></span>                     
       </button>
       <a class="navbar-brand" href="#">Supplementry Materials</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#RQ1">Performance: RQ1</a></li>
+        <li><a href="#RQ1">Performance: RQ1</a></li>
         <li><a href="#RQ2">Performance: RQ2</a></li>
         <li><a href="#Optim">Optimization</a></li>
-        <li><a href="#Code">Code Handbook</a></li>
       </ul>
       <!-- <ul class="nav navbar-nav navbar-right">
         <li><a href="https://github.com/MIA-FL/SP22"><span class="glyphicon glyphicon-new-window"></span> Github Repo</a></li>
@@ -96,7 +94,20 @@
   </nav>
   <div class="container text-left data-tab" id='base-performance'>
 
-    <h5 class="tab-title">Baseline performance</h5>
+    <h5 class="tab-title">Table II. Baseline performance of Non-targeted MIA-FL</h5>
+    <div class="container">
+      <p>Context in paper</p>
+      <p>
+        Non-Targeted MIA-FL: We first study the performance of non-targeted MIA-FL. 
+        We re-implement the state-of-the-art passive MIA base on prediction correctness proposed by Song et al., 
+        and compare the proposed active attacks with it. The experimental results are shown in Table II. 
+        The non-target MIA-FL achieve 9.96%, 17.9%, 17.99%, 25.95% improvements in terms of the attack accuracy over 
+        the passive MIA, in the settings of Black-box, Grey-box-I, White-box-Local and White-box-Agg, 
+        respectively, suggesting that significant additional membership-relevant information could be 
+        obtained by active attacks.
+      </p>
+    </div>
+
     <div id="Book1_15357" align=center x:publishsource="Excel">
 
       <table border=1 cellpadding=1 cellspacing=1 width=763 style='border-collapse:
@@ -226,11 +237,31 @@
       </table>
       
       </div>
+      <br>
   </div>
   <br>
 
   <div class="container text-left data-tab" id='attack-process'>
-    <h5 class="tab-title">Attack process</h5>
+    <h5 class="tab-title">Fig. 2. Model and attack performance during the training iterations.</h5>
+    <div class="container">
+      <p>Context in paper</p>
+      <p>
+        We are interested in whether the participants&#8242; persuasion and influencing to solve 
+        disagreements indeed contributes into the leakage of membership-relevant information. 
+        To this end, we zoom into the training iterations to explore how the participants collaboratively 
+        construct the global model and how they act when disagreement arises. 
+        Fig. 2 illustrates the performances of model prediction and MIA-FL during training. 
+        The global model demonstrates a clear divergence in its prediction accuracy between the member 
+        samples and non-member samples immediately after the attack starts (at epoch 30). 
+        The prediction accuracy on member samples (olive curves) steadily increases and gradually approaches 
+        the training accuracy (magenta curves), while that of the non-member samples starts decreasing rapidly 
+        once the attacker misleads the model to the opposite direction regarding these samples (blue curves). 
+        This gives clear clues for the attacker to determine whether a sample is used for training by any other participants. 
+        The larger the divergence between the prediction accuracy on member samples and the non-member samples 
+        (i.e., the gap between the olive and blue curves), the better the attack accuracy can be achieved. 
+        Such divergence is the main root cause of the active MIA-FL.
+      </p>
+    </div>
     <h5 class="text-center">CIFAR-10</h5>
     <div class="row">
       <div class="col-sm-6 text-center">
@@ -316,7 +347,22 @@
   <br>
 
   <div class="container text-left data-tab" id='start-point'>
-    <h5 class="tab-title">Start point</h5>
+    <h5 class="tab-title">Fig. 3. The impact of different MIA-FL starting point</h5>
+    <div class="container">
+      <p>Context in paper</p>
+      <p>
+        Starting point and attack rounds: We next investi- gate how different starting points of the 
+        attack affect the attack performance. We set the starting point at epoch {0, 20, 40, 100, 200, 300} 
+        respectively, and observe the perfor- mance of MIA-FL (Fig. 3).
+      </p>
+      <p>
+        In general, the later MIA-FL starts, the better accuracy can be achieved. If MIA-FL starts at the very 
+        beginning of the training (i.e., starting point being 0, magenta curves in Fig. 3), the attack accuracy 
+        is significantly low at its first several rounds (from 0 to 20). This is because after the model converges, 
+        the model&#8242;s performance becomes stable, which is beneficial for the attacker to better distinguish member 
+        samples from non-member samples based on the model&#8242;s prediction.
+      </p>
+    </div>
     <h5 class="text-center">Location30</h5>
     <div class="row">
       <div class="col-sm-4 text-center">
@@ -352,7 +398,23 @@
   <br>
 
   <div class="container text-left data-tab" id='dp'>
-    <h5 class="tab-title">Performance of Grey-box I MIA-FL against differentially private FL</h5>
+    <h5 class="tab-title">Table III. Performance of Grey-box I MIA-FL against differentially private FL</h5>
+    <div class="container">
+      <p>Context in paper</p>
+      <p>
+        We note that the privacy guarantee provided by differential privacy is based on the indistinguishablity 
+        of the output of an algorithm that takes inputs of any two individual samples in the dataset. 
+        Such privacy promise holds in the federated learning when all participants follow the learning protocol, 
+        as the norm of the local gradients (which decides the sensitivity of the algorithm) can be clipped and unified. 
+        However, an active attack can simply break the DP privacy guarantee as the feeding of the malicious updates 
+        can largely affect the output space of the algorithm.
+      </p>
+      <p>
+        Therefore, as expected, MIA-FL does not lose any advantage with DP-based federated learning. That is, 
+        the attack accuracy of a Grey-box-I attacker in the DP-FL (Table III) is the same as that in plain FL without 
+        DP mechanisms (<a href="#base-performance">Table II</a>).
+      </p>
+    </div>
     <div class="container text-center">
       <table style="margin: auto;" dir="ltr" border="1" cellspacing="0" cellpadding="0"><colgroup><col width="100" /><col width="120" /><col width="184" /><col width="118" /><col width="146" /></colgroup>
         <tbody>
@@ -408,12 +470,24 @@
         </tbody>
         </table>
     </div>
+    <br>
   </div>
   <br>
 
   <div class="container text-left data-tab" id="attack-rounds">
-    <h5 class="tab-title">Attack rounds</h5>
-
+    <h5 class="tab-title">Fig. 4. The required attack rounds by MIA-FL</h5>
+    <div class="container">
+      <p>Context in paper</p>
+      <p>
+        The generalization ability of the model affects the required attack rounds, as shown in Fig. 4 
+        (in which the MIA-FL&#8242; starting point is fixed at epoch 30). Due to the better generalization 
+        of the model on the 1000Genome dataset (79.51% test accuracy as reported in <a href="#base-performance">Table II</a>), 
+        much more attack rounds are required to achieve the same attack accuracy as on the Location30 dataset 
+        (64.71% test accuracy). For example, 250 rounds are needed to achieve 80% of attack accuracy on 1000Genome 
+        while only around 50 rounds are needed on Location30 (Fig. 4c). This is because when the model generalizes better, 
+        the MIA-FL has to take more rounds to reduce the model prediction accuracy on non-member samples.
+      </p>
+    </div>
     <h5 class="text-center">In paper - Location30 and Genome</h5>
     <div class="row">
       <div class="col-sm-4 text-center">
@@ -458,7 +532,24 @@
   <br>
 
   <div class="container text-left data-tab" id='targeted-attack'>
-    <h5 class="tab-title">Targeted MIA-FL attack accuracy</h5>
+    <h5 class="tab-title">Table IV. Targeted MIA-FL attack accuracy</h5>
+    <div class="container">
+      <p>Context in paper</p>
+      <p>
+        Targeted MIA-FL: We also explore the performance of targeted MIA-FL, and our experimental results are 
+        summarized in Table IV. The process of our targeted MIA-FL consists of two steps, i.e., 
+        (1) to conduct non-targeted attack first to classify members from non-members, and 
+        (2) based on the samples that are classified as member, the attacker apply Equation 5, 6 and 8 to 
+        identify the samples&#8242; owner. We therefore first report the general attack accuracy (i.e., non-targeted) 
+        on the member samples in the columns of “Mem”, and the targeted attack accuracy among the true member sample in 
+        the columns of “T_mem”, and the the targeted attack accuracy among the total predicted member samples in the 
+        column of “P_mem”.
+      </p>
+      <p>
+        In general, The White-box-Local MIA-FL achieves similar performance to the Grey-box II, while the White-box-Agg 
+        MIA-FL is able to obtain more targeted membership information, which aligns with the performance in the non-targeted MIA-FL.
+      </p>
+    </div>
     <div class="container">
       <div class="container text-center">
         <table  dir="ltr" border="1" cellspacing="0" cellpadding="0"><colgroup><col width="100" /><col width="152" /><col width="100" /><col width="100" /><col width="100" /><col width="100" /><col width="100" /></colgroup>
@@ -645,8 +736,46 @@
 <div class="container-fluid data-section text-center" id="RQ2">    
   <h4>RQ2: Performance of MIA-FL against robust aggregation</h4>
   <div class="container text-left data-tab">
-    <h5 class="tab-title">Performance of MIA-FL against robust aggregation mechanisms</h5>
-
+    <h5 class="tab-title">Table V. Performance of MIA-FL against robust aggregation mechanisms</h5>
+    <div class="container">
+      <p>Context in paper</p>
+      <p>
+        In this section, we investigate the performance of MIA- FL against robust aggregation mechanisms, 
+        which are the main countermeasure against training data manipulation. We consider the following 
+        mechanisms as they have been widely discussed in the literature.
+      </p>
+      <ul>
+        <li>
+          <p>
+            <b>Krum and Multi-krum</b> 
+            Krum and Multi-krum compare participants&#8242; local updates based on the distance, 
+            and select the top one (Krum) and top N (Multi-krum) trustworthy updates before aggregating them.
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Trimmed-mean and Median</b> 
+            Both of them are averaging-based mechanisms, i.e., aggregates each dimension of input gradients separately using the mean
+            or median values.
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Fang defenses</b> 
+            It detects and filters out potentially malicious local updates based on their impact on the error rate 
+            (Error Rate based Rejection) and the loss (Loss Function based Rejection).
+          </p>
+        </li>
+      </ul>
+      <p>
+        We summarize the performance of MIA-FL against the robust aggregation mechanisms in Table V. In the paper, 
+        we report our results on CIFAR-10 and Location30, which represents a well-generalized and a less-generalized model 
+        respectively. More results on other datasets can be found at our <a href="https://github.com/MIA-FL/SP22">online repository</a>. On average, 
+        the robust aggregation mechanisms decreases 4.78%, 8.28%, and 10.52% of attack accuracy in the settings of 
+        Black-box, Grey-box-I, White- box-Local, and 6.25%, 9.47% on CIFAR-10 and Location30 respectively.
+      </p>
+    </div>
+    <h5 class="text-center">In paper - Location30 and Genome</h5>
     <div class="container">
       <table dir="ltr" border="1" cellspacing="0" cellpadding="0"><colgroup><col width="100" /><col width="152" /><col width="100" /><col width="100" /><col width="100" /><col width="100" /><col width="100" /><col width="100" /><col width="100" /><col width="100" /><col width="100" /></colgroup>
         <tbody>
@@ -760,7 +889,7 @@
         </tbody>
         </table>
     </div>
-
+    <br>
   </div>
   <br>
   
@@ -769,8 +898,35 @@
 
 <div class="container-fluid data-section text-center" id="Optim">    
   <h4>Optimized MIA-FL</h4>
+
   <div class="data-tab container text-left">
-    <h5 class="tab-title">Table 1: CIFAR-10 and Location30</h5>
+    <h5 class="tab-title">Table VI. Performance of optimized MIA-FL against robust aggregation mechanisms</h5>
+    <div class="container">
+      <p>Context in paper</p>
+      <p>
+        In this section, we evaluate the optimized MIA-FL. We focuse on answering the following RQ that is a follow-up question of RQ2.
+      </p>
+      <ul>
+        <li>
+          <b>RQ3.</b>
+          How much improvement can the optimized MIA-FL achieve when the FL is employed with robust aggregation mechanisms?
+        </li>
+      </ul>
+      <p>
+        We select those aggregation mechanisms which are effective to MIA-FL (see Section VI-B), 
+        including Krum, Multi-krum and Fang defenses. For Krum, because of its stickiness to a certain candidate 
+        (as discussed in Section VI-B), we find that with the optimized MIA-FL, only the attacker&#8242;s updates 
+        are selected by Krum throughout the whole training process. Such results destroy the entire FL training 
+        and also make the attack setting invalid, since all the member samples submitted to the training is from the attacker. 
+        We therefore only report the performance of the optimized MIA-FL against Multi-krum and Fang defenses in Table VI 
+        and <a href="#fig5">Figure 5</a>. 
+        In the Black-box setting with Multi-Krum on CIFAR10, Fang defenses on CIFAR10 and Fang defenses on Location30 
+        (denoted with “--” in Table VI), we do not conduct optimized MIA-FL because the robust aggregation mechanisms only 
+        reduce less than 2% of attack accuracy from the baseline (see <a href="#base-performance">Table II</a>).
+      </p>
+    </div>
+    <div class="container">
+    <h5 class="text-center">In paper - CIFAR10 and Location30</h5>
     <table dir="ltr" border="1" cellspacing="0" cellpadding="0"><colgroup><col width="100" /><col width="120" /><col width="184" /><col width="118" /><col width="146" /><col width="109" /><col width="222" /><col width="136" /></colgroup>
       <tbody>
       <tr>
@@ -841,219 +997,117 @@
       </tr>
       </tbody>
       </table>
+      </div>
+    <hr>
+    <div class="container">
+      <h5 class="text-center">Extra - Texas100, Genome, and Purchase100</h5>
+      <table dir="ltr" border="1" cellspacing="0" cellpadding="0"><colgroup><col width="100" /><col width="152" /><col width="100" /><col width="100" /><col width="100" /><col width="100" /><col width="100" /><col width="100" /><col width="100" /><col width="100" /><col width="100" /></colgroup>
+        <tbody>
+        <tr>
+        <td colspan="2" rowspan="2">
+        </td>
+        <td colspan="3" rowspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Black-box&quot;}">Black-box</td>
+        <td colspan="3" rowspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Grey-box 1&quot;}">Grey-box 1</td>
+        <td colspan="3" rowspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;White-box Local&quot;}">White-box Local</td>
+        </tr>
+        <tr>
+        <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;TEXAS100&quot;}">TEXAS100</td>
+        <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;PURCHASE100&quot;}">PURCHASE100</td>
+        <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;GENOME&quot;}">GENOME</td>
+        <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;TEXAS100&quot;}">TEXAS100</td>
+        <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;PURCHASE100&quot;}">PURCHASE100</td>
+        <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;GENOME&quot;}">GENOME</td>
+        <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;TEXAS100&quot;}">TEXAS100</td>
+        <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;PURCHASE100&quot;}">PURCHASE100</td>
+        <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;GENOME&quot;}">GENOME</td>
+        </tr>
+        <tr>
+        <td colspan="2" rowspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Baseline&quot;}">Non-AGR Baseline</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.9765625}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">97.66%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.63378906}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">63.38%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.701171875}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">70.12%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.975585938}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">97.56%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.848632813}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">84.86%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.866210938}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">86.62%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.98046875}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">98.05%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.8291015625}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">82.91%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.833984375}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">83.40%</td>
+        </tr>
+        <tr>
+        <td colspan="1" rowspan="2" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Multi-krum&quot;}">
+        <div>Multi-krum</div>
+        </td>
+        <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Baseline vs Agr&quot;}">Baseline</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.771484375}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">77.15%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.578125}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">57.81%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.55078125}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">55.08%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.7841796875}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">78.42%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.7880859375}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">78.81%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.5615234375}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">56.15%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.7822265625}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">78.22%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.7529296875}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">75.29%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.5693359375}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">56.93%</td>
+        </tr>
+        <tr>
+        <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Optimized \\attack vs Agr&quot;}">Optimized attack</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.806640625}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">80.66%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.648}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">64.80%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.5625}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">56.25%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.794921875}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">79.49%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.7880859375}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">78.81%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.58}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">58.00%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.916015625}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">91.60%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.806640625}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">80.66%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.53125}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">53.13%</td>
+        </tr>
+        <tr>
+        <td colspan="1" rowspan="2" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Fang defenses&quot;}">
+        <div>Fang defenses</div>
+        </td>
+        <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Baseline vs Agr&quot;}">Baseline</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.8447265625}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">84.47%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.5810546875}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">58.11%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.603515625}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">60.35%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.6767578125}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">67.68%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.5634765625}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">56.35%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.5546875}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">55.47%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.8056640625}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">80.57%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.5703125}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">57.03%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.6162109375}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">61.62%</td>
+        </tr>
+        <tr>
+        <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Optimized \\attack vs Agr&quot;}">Optimized attack</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.968}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">96.80%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.590818363273453}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">59.08%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.74}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">74.00%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.83}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">83.00%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.6212624585}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">62.13%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.606666666666666}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">60.67%</td>
+        <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.878}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">87.80%</td>
+        </tr>
+        </tbody>
+        </table>
+    </div>
+  <br>
   </div>
-  <div class="data-tab container text-left">
-    <h5 class="tab-title">Table 2: Texas100, Genome, and Purchase100</h5>
-    <table dir="ltr" border="1" cellspacing="0" cellpadding="0"><colgroup><col width="100" /><col width="152" /><col width="100" /><col width="100" /><col width="100" /><col width="100" /><col width="100" /><col width="100" /><col width="100" /><col width="100" /><col width="100" /></colgroup>
-      <tbody>
-      <tr>
-      <td colspan="2" rowspan="2">
-      </td>
-      <td colspan="3" rowspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Black-box&quot;}">Black-box</td>
-      <td colspan="3" rowspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Grey-box 1&quot;}">Grey-box 1</td>
-      <td colspan="3" rowspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;White-box Local&quot;}">White-box Local</td>
-      </tr>
-      <tr>
-      <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;TEXAS100&quot;}">TEXAS100</td>
-      <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;PURCHASE100&quot;}">PURCHASE100</td>
-      <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;GENOME&quot;}">GENOME</td>
-      <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;TEXAS100&quot;}">TEXAS100</td>
-      <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;PURCHASE100&quot;}">PURCHASE100</td>
-      <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;GENOME&quot;}">GENOME</td>
-      <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;TEXAS100&quot;}">TEXAS100</td>
-      <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;PURCHASE100&quot;}">PURCHASE100</td>
-      <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;GENOME&quot;}">GENOME</td>
-      </tr>
-      <tr>
-      <td colspan="2" rowspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Baseline&quot;}">Non-AGR Baseline</td>
-      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.9765625}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">97.66%</td>
-      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.63378906}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">63.38%</td>
-      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.701171875}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">70.12%</td>
-      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.975585938}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">97.56%</td>
-      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.848632813}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">84.86%</td>
-      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.866210938}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">86.62%</td>
-      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.98046875}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">98.05%</td>
-      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.8291015625}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">82.91%</td>
-      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.833984375}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">83.40%</td>
-      </tr>
-      <tr>
-      <td colspan="1" rowspan="2" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Multi-krum&quot;}">
-      <div>Multi-krum</div>
-      </td>
-      <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Baseline vs Agr&quot;}">Baseline</td>
-      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.771484375}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">77.15%</td>
-      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.578125}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">57.81%</td>
-      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.55078125}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">55.08%</td>
-      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.7841796875}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">78.42%</td>
-      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.7880859375}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">78.81%</td>
-      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.5615234375}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">56.15%</td>
-      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.7822265625}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">78.22%</td>
-      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.7529296875}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">75.29%</td>
-      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.5693359375}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">56.93%</td>
-      </tr>
-      <tr>
-      <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Optimized \\attack vs Agr&quot;}">Optimized attack</td>
-      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.806640625}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">80.66%</td>
-      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.648}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">64.80%</td>
-      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.5625}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">56.25%</td>
-      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.794921875}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">79.49%</td>
-      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.7880859375}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">78.81%</td>
-      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.58}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">58.00%</td>
-      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.916015625}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">91.60%</td>
-      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.806640625}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">80.66%</td>
-      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.53125}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">53.13%</td>
-      </tr>
-      <tr>
-      <td colspan="1" rowspan="2" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Fang defenses&quot;}">
-      <div>Fang defenses</div>
-      </td>
-      <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Baseline vs Agr&quot;}">Baseline</td>
-      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.8447265625}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">84.47%</td>
-      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.5810546875}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">58.11%</td>
-      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.603515625}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">60.35%</td>
-      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.6767578125}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">67.68%</td>
-      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.5634765625}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">56.35%</td>
-      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.5546875}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">55.47%</td>
-      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.8056640625}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">80.57%</td>
-      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.5703125}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">57.03%</td>
-      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.6162109375}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">61.62%</td>
-      </tr>
-      <tr>
-      <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Optimized \\attack vs Agr&quot;}">Optimized attack</td>
-      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.968}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">96.80%</td>
-      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.590818363273453}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">59.08%</td>
-      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.74}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">74.00%</td>
-      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.83}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">83.00%</td>
-      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.6212624585}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">62.13%</td>
-      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.606666666666666}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">60.67%</td>
-      <td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:0.878}" data-sheets-numberformat="{&quot;1&quot;:3,&quot;2&quot;:&quot;0.00%&quot;,&quot;3&quot;:1}">87.80%</td>
-      </tr>
-      </tbody>
-      </table>
+  <br>
+  <div class="container data-tab text-left" id="fig5">
+    <h5 class="tab-title">Fig. 5. Optimized MIA-FL against Robust aggregation mechanisms</h5>
+    <div class="container">
+      <p>Context in paper - same as above</p>
+    </div>
+    <div class="container text-center">
+      <img class="data-fig" style="margin: auto;" src="img/defense_attack_vs_optimized.png">
+    </div>
   </div>
   <br>
 </div>
 <br>
 
-<div class="container-fluid data-section text-center" id="Code">    
-  <h4>Code Handbook</h4>
-  <div class="data-tab container text-left">
-    <h5 class="tab-title">File structures</h5>
-    <div class="container">
-      <p>Backbone files</p>
-      <p>These files provides the core functionality in the experiment setting</p>
-      <ol>
-      <li>aggregator.py <span class="text-muted"> - The aggregator collects and calculate the gradients from participants</span></li>
-      <li>constants.py <span class="text-muted"> - All hyper-parameters</span></li>
-      <li>data_reader.py <span class="text-muted"> - The module loading data from data set files and distribute them to participants</span></li>
-      <li>models.py <span class="text-muted"> - The participants, global model, and local attackers</span></li>
-      <li>organizer.py <span class="text-muted"> - The module setting up different experiments</span></li>
-      </ol>
-    </div>
-    <hr>
-    <div class="container">
-      <p>Experiment runnable</p>
-      <p>These files are the runnable experiment files calling above backbone files</p>
-      <ol>
-        <li>blackbox_agr_op.py</li>
-        <li>blackbox_agr_optimized.py</li>
-        <li>blackbox_baseline.py</li>
-        <li>blackbox_optimized.py</li>
-        <li>blackbox_starting_baseline.py</li>
-        <li>grey1_baseline_texas_trmean.py</li>
-        <li>greybox_I_baseline_misleading.py</li>
-        <li>greybox_I_baseline.py</li>
-        <li>greybox_II_baseline.py</li>
-        <li>greybox1_starting_baseline.py</li>
-        <li>optimized_greybox1.py</li>
-        <li>whitebox_global_non_target_starting_baseline.py</li>
-        <li>whitebox_global_non_targeted_baseline.py</li>
-        <li>whitebox_global_target_starting_baseline.py</li>
-        <li>whitebox_global_targeted_round_robbin_shadow_ver.py</li>
-        <li>whitebox_global_targeted_round_robbin_starting_point_baseline.py</li>
-        <li>whitebox_global_targeted_round_robbin.py</li>
-        <li>whitebox_local_baseline.py</li>
-        <li>whitebox_local_optimized.py</li>
-        <li>whitebox_local_targeted_baseline.py</li>
-      </ol>
-    </div>
-    <hr>
-    <div class="container">
-      <p>Readme</p>
-      <p>
-        The dataset_purchase.tgz need to be extracted as 'dataset_purchase' before running
-      </p>
-    </div>
-  </div>
-  <br>
-
-  <div class="data-tab container text-left">
-    <h5 class="tab-title">Constant List</h5>
-    <div class="container">
-      <p>
-        Key constants
-      </p>
-      <ol>
-        <li>
-          DEFAULT_SET
-          <ul>
-            <li>The chosen dataset to run experiments</li>
-            <li>
-              Available values
-              <ol>
-                <li>PURCHASE100</li>
-                <li>CIFAR_10</li>
-                <li>LOCATION30</li>
-                <li>TEXAS100</li>
-                <li>GNOME</li>
-              </ol>
-            </li>
-          </ul>
-        </li>
-        <li>
-          DEFAULT_AGR
-          <ul>
-            <li>The chosen robust aggregation mechanisms to defend malicious updates</li>
-            <li>
-              Available values
-              <ol>
-                <li>TRMEAN = "Trimmed Mean"</li>
-                <li>KRUM = "Krum"</li>
-                <li>MULTI_KRUM = "Multi-Krum"</li>
-                <li>MEDIAN = "Median"</li>
-                <li>FANG = "Fang"</li>
-                <li>None (Please use the python reserved None value)</li>
-              </ol>
-            </li>
-          </ul>
-        </li>
-        <li>
-          NUMBER_OF_PARTICIPANTS: The number of participants involved in federated learning process
-        </li>
-        <li>
-          NUMBER_OF_ADVERSARY: The number of adversary involved in attack experiments, the adversary is in a DISJOINT set with participants
-        </li>
-        <li>
-          MAX_EPOCH: The overall rounds of federated training for the current experiment
-        </li>
-        <li>
-          TRAIN_EPOCH: The overall rounds of deferated training without malicious updates. In other words, the number of training rounds that the adversary waits the model to converge
-        </li>
-        <li>
-          EXPERIMENTAL_DATA_DIRECTORY: The directory to store experiment data, it must be a existing directory
-        </li>
-        <li>
-          GLOBAL_SEED: The random seed used
-        </li>
-      </ol>
-    </div>
-  </div>
-  <br>
-</div>
-<br>
 
 <footer class="container-fluid text-center">
   <p>Comprehensive Analyses of Active Membership Inference Attacks against Federated Learning</p>
+  <a href="https://github.com/MIA-FL/SP22"><span class="glyphicon glyphicon-new-window"></span> Github Repo</a>
 </footer>
 
 </body>
